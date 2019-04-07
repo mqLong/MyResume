@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>孟庆龙的简历</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+		}
+
+		.main {
+			position: relative;
+			top: 0;
+			transition: 0.7s ease;
+		}
+
+		.main .page {
+			width: 100%;
+			height: 100vh;
+			font-size: 30px;
+			position: relative;
+			display: flex;
+		}
+
+		.page1 {
+			flex-direction: column;
+			align-items: center;
+			background-color: #f9f9f9;
+		}
+
+		.page1 h2 {
+			margin-top: 100px;
+			color: #444;
+		}
+
+		.page1 p {
+			margin-top: 100px;
+			color: #777777;
+			font-size: 18px;
+		}
+
+		.touxiang {
+			width: 140px;
+			height: 140px;
+			border-radius: 50%;
+			display: inline-block;
+			margin-top: 10%;
+			box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, .6)
+		}
+
+		.page2 {
+			background-color: #416284;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.page2 h2,
+		.page3 h2,
+		.page4 h2,
+		.page5 h2 {
+			color: #fff !important;
+			margin-top: 5vh;
+		}
+
+		.jianjie {
+			width: 62%;
+			height: 68px;
+			background-color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			text-align: center;
+			line-height: 68px;
+			margin-top: 8vh;
+		}
+
+		.xinxi {
+			width: 62%;
+			height: 350px;
+			background-color: #fff;
+			font-size: 16px;
+			border-radius: 5px;
+			text-align: center;
+			margin-top: 8vh;
+			font-size: 16px;
+			color: #666;
+		}
+
+		.xinxiRow1,
+		.xinxiRow2 {
+			display: inline-block;
+			width: 100%;
+			height: 50%;
+		}
+
+		.xinxi .mation {
+			width: 180px;
+			height: 100px;
+			display: inline-block;
+		}
+
+		.xinxi .mation img {
+			width: 29px;
+			height: 29px;
+			display: inline-block;
+		}
+
+		.xinxiRow1,
+		.xinxiRow2 {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.page3 {
+			background: linear-gradient(220deg, #ff5f7e, #ffc360);
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+
+
+		.skills {
+			width: 60%;
+			height: 500px;
+			margin-top: 110px;
+		}
+
+		.skill {
+			position: relative;
+			background: #fff;
+			width: 175px;
+			height: 175px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.skillRow1,
+		.skillRow2 {
+			float: left;
+			width: 100%;
+			height: 250px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+
+		.skill img {
+			width: 115px;
+			height: 115px;
+		}
+
+		.skill:hover {
+			transition: all .3s;
+			box-shadow: 3px 5px 10px rgba(0, 0, 0, .4);
+		}
+
+		.skill:hover::before {
+			width: 100px;
+			height: 28px;
+			background-color: #f0f0f0;
+			border: 1px solid #ccc;
+			box-shadow: 0 3px 5px rgba(0, 0, 0, .4);
+			content: attr(data-skill);
+			position: absolute;
+			padding: 12px;
+			color: #444;
+			font-size: 18px;
+			font-weight: 700;
+			text-align: center;
+			border-radius: 4px;
+			animation: mymove .5s ease forwards;
+		}
+
+		@keyframes mymove {
+			from {
+				top: 0;
+				opacity: 0;
+			}
+
+			to {
+				top: -60px;
+				opacity: 1;
+			}
+		}
+
+		.page4 {
+			background: linear-gradient(270deg, #283048, #859398);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+		}
+
+		.nav {
+			width: 50px;
+			height: 300px;
+			position: absolute;
+			top: 50%;
+			margin-top: -150px;
+			right: 60px;
+			z-index: 100;
+			border-radius: 4px;
+		}
+
+		.nav .nav-item {
+			width: 100%;
+			height: 20%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.nav .nav-item i {
+			display: inline-block;
+			border-radius: 50%;
+			width: 20px;
+			height: 20px;
+			background-color: rgba(0, 0, 0, .4);
+			/* background-image: url("skill/icon0.svg"); */
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+		}
+
+		.nav .nav-item i:hover {
+			transition: all .5s;
+			background-color: rgba(0, 0, 0, .8)
+		}
+
+		.nav .nav-item i.active {
+			background-color: rgba(0, 0, 0, .8);
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+		}
+
+
+
+		.page4 .projects {
+			height: 500px;
+			width: 70%;
+			margin-top: 10vh;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			position: relative;
+			font-size: 16px;
+		}
+
+		.page4 .projects .project {
+			height: 400px;
+			width: 300px;
+			background-color: #fff;
+			border-radius: 10px;
+			color: #333;
+			transition: all .4s;
+			position: relative;
+		}
+
+		.page4 .projects .project:hover {
+			box-shadow: 0 12px 24px rgba(0, 0, 0, .5);
+		}
+
+		.page4 .projects .project .img {
+			width: 86%;
+			margin-top: 7%;
+			margin-left: 7%;
+			border-radius: 7px;
+		}
+
+		.page4 .projects .project p {
+			margin: 6%;
+		}
+
+		.projects a {
+			display: inline-block;
+			width: 86%;
+			height: 45px;
+			border: 2px solid #666767;
+			text-align: center;
+			border-radius: 5px;
+			margin: 6%;
+			position: relative;
+			transition: all .4s;
+			background-image: url("pic/link.png");
+			background-repeat: no-repeat;
+			background-position: 50%;
+			background-size: 45px 45px;
+		}
+
+		.projects a:hover {
+			display: inline-block;
+			width: 86%;
+			height: 45px;
+			border: 2px solid #fff;
+			background-color: #fff;
+			text-align: center;
+			border-radius: 5px;
+			margin: 6%;
+			position: relative;
+			background-image: url("pic/linkH.png");
+		}
+
+		.page5 {
+			position: relative;
+			background: #f5f5d5;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+		}
+
+		.page5 .notes {
+			position: relative;
+			width: 80%;
+			height: 60vh;
+			/* background-color: #0f0; */
+			margin: 5vh auto;
+		}
+
+		.page5 h2 {
+			color: #566270 !important;
+			margin-left: 15px;
+
+		}
+
+		.page5 h4 {
+			color: #566270 !important;
+			margin-left: 15px;
+			margin-top: 5px;
+		}
+		.page5 a {
+			position: relative;
+			display: inline-block;
+			text-decoration: none;
+			color: #566270;
+			width: 45%;
+			height: 170px;
+			;
+			background-color: #fff;
+			border-radius: 6px;
+			margin-left: 4%;
+			margin-top: 4%;
+		}
+
+		.page5 a:hover {
+			box-shadow: 0 3px 10px rgba(0, 0, 0, .4);
+			transition: all .3s ease;
+		}
+
+		.page5 a .note-content {
+			margin-left: 15px;
+			margin-top: 5px;
+			width: 93%;
+			height: 80px;
+			color: #566270;
+			font-size: 16px;
+			overflow: hidden;
+		}
+
+		.page5 a .note-date img {
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+		}
+
+		.page5 a .note-date {
+			font-size: 16px;
+			margin-left: 15px;
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<ul class="main">
+			<li class="page page1">
+				<img src="pic/touxiang.jpg" alt="" class="touxiang">
+				<h2>孟庆龙</h2>
+				<p>正在找工作 多多指教</p>
+			</li>
+
+			<li class="page page2">
+				<h2>自我介绍</h2>
+				<div class="jianjie">
+					进阶中的前端工程师，熟悉H5 CSS3 JQ VUE全家桶等
+				</div>
+				<div class="xinxi">
+					<div class="xinxiRow1">
+						<div class="mation mation0">
+							<img src="pic/shengri.png" alt="">
+							<p>1900.03.01</p>
+						</div>
+						<div class="mation mation1">
+							<img src="pic/jingyan.png" alt="">
+							<p>2年工作经验</p>
+						</div>
+						<div class="mation mation2">
+							<img src="pic/add.png" alt="">
+							<p>山东济南</p>
+						</div>
+					</div>
+
+
+					<div class="xinxiRow2">
+						<div class="mation mation3">
+							<img src="pic/email.png" alt="">
+							<p>342887760@qq.com</p>
+						</div>
+						<div class="mation mation4">
+							<img src="pic/phone.png" alt="">
+							<p>18765528262</p>
+						</div>
+						<div class="mation mation5">
+							<img src="pic/xueli.png" alt="">
+							<p>前端自学</p>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li class="page page3">
+				<h2>技能</h2>
+				<div class="skills">
+					<div class="skillRow1">
+						<div class="skill h5" data-skill="HTML5">
+							<img src="skill/HTML5.png" alt="">
+						</div>
+						<div class="skill css3" data-skill="CSS3">
+							<img src="skill/CSS3.png" alt="">
+						</div>
+						<div class="skill js" data-skill="JavaScript">
+							<img src="skill/js.png" alt="">
+						</div>
+						<div class="skill jq" data-skill="jQuery">
+							<img src="skill/jQuery.png" alt="">
+						</div>
+					</div>
+
+					<div class="skillRow2">
+						<div class="skill ps" data-skill="PhotoShop">
+							<img src="skill/ps.png" alt="">
+						</div>
+						<div class="skill node" data-skill="Node">
+							<img src="skill/Node.png" alt="">
+						</div>
+						<div class="skill bs" data-skill="Bootstrap">
+							<img src="skill/Bootstrap.png" alt="">
+						</div>
+						<div class="skill vue" data-skill="Vue">
+							<img src="skill/Vue.png" alt="">
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li class="page page4">
+				<h2>项目展示</h2>
+				<div class="projects">
+					<div class="project project1">
+						<img src="img/tb.jpg" alt="" class="img">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;伟大的安德罗妮生前曾经说过：“当你能手撸淘宝首页的时候，你的html和css已经过关了”。
+						</p>
+						<a href="https://mqlong.github.io/taobao/" target="_blank">
+						</a>
+					</div>
+					<div class="project project2">
+						<img src="img/plan.jpg" alt="" class="img">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一个打飞机的小游戏，纯JS手写，主要用到JS基础与DOM基础和面向对象的编程。
+						</p>
+						<a href="https://mqlong.github.io/Myplane/" target="_blank">
+						</a>
+					</div>
+					<div class="project project3">
+						<img src="img/tran.png" alt="" class="img">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用VUE和Bootstrap快速构建的一个在线翻译小DEMO。调用国外免费API，可惜速度有点慢。
+						</p>
+						<a href="https://mqlong.github.io/MyTranslation/" target="_blank">
+						</a>
+					</div>
+				</div>
+			</li>
+
+			<li class="page page5">
+				<h2>网络日志</h2>
+				<div class="notes">
+					<a href="http://note.youdao.com/noteshare?id=a71fc36047f4ca44b908b701c861d0bf&sub=519F10ADDE984416AA03A5C54056A48E" class="note" target="_blank" >
+						<h4>DOM知识和事件</h4>
+						<p class="note-content">
+							记录在学习过程中关于DOM知识的笔记							
+						</p>
+						<p class="note-date">
+							<img src="img/data.png" alt=""> 2018年2月3日 19:22
+						</p>
+					</a>
+					<a href="http://note.youdao.com/noteshare?id=bff2e50684ea65d96d585048ffaa9864&sub=361624F2F1BD48B2B08C337E99C35931" class="note" target="_blank" >
+						<h4>闭包和作用域链</h4>
+						<p class="note-content">
+							由于子函数将继承父级AO到自己的作用域链中，当子集函数的生命周期超过父级函数的生命周期时会产生闭包。
+						</p>
+						<p class="note-date">
+							<img src="img/data.png" alt=""> 2018年3月13日 19:22
+						</p>
+					</a>
+					<a href="http://note.youdao.com/noteshare?id=64b3f8d50305cd38d8e51bebbbaa1e4c&sub=D0710B12E3B74D778E83BBBF66025D99" class="note" target="_blank">
+						<h4>ES6快速手册</h4>
+						<p class="note-content">
+							es6中有很多特性，使javascript语法更好用，总结一些常用的es6知识点。
+						</p>
+						<p class="note-date">
+							<img src="img/data.png" alt=""> 2018年4月2日 19:22
+						</p>
+					</a>
+					<a href="http://note.youdao.com/noteshare?id=3f07d696d40133cf52364b01af604e37&sub=E899B82F15E8432E8872C10000A94AA9" class="note" target="_blank">
+						<h4>H5中唤醒APP</h4>
+						<p class="note-content">
+							制作一个按钮，如果本地安装了app，那么就直接唤起本地的app，如果没有安装，则跳转到下载。
+						</p>
+						<p class="note-date">
+							<img src="img/data.png" alt=""> 2018年5月3日 19:22
+						</p>
+					</a>
+					<a href="http://note.youdao.com/noteshare?id=3cae35bddfbd535a0038506ebdf0aa74&sub=604350E14B0649A296F382EC005A73B3" class="note" target="_blank">
+						<h4>cookie是什么</h4>
+						<p class="note-content">
+							网络早期最大的问题之一是如何管理状态。简而言之，服务器无法知道两个请求是否来自同一个浏览器。							
+						</p>
+						<p class="note-date">
+							<img src="img/data.png" alt=""> 2018年8月6日 19:22
+						</p>
+					</a>
+					<a href="http://note.youdao.com/noteshare?id=6b8f430328346fb44bc5cee826fefc77&sub=8679105D046243478ECD7A5B172139AB" class="note" target="_blank">
+						<h4>AJAX快速手册</h4>
+						<p class="note-content">
+							ajax 意思是异步的js和XML
+						</p>
+						<p class="note-date">
+							<img src="img/data.png" alt=""> 2018年12月21日 19:22
+						</p>
+					</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="nav">
+		<div class="nav-item"><i dataIndex="0"></i></div>
+		<div class="nav-item"><i dataIndex="1"></i></div>
+		<div class="nav-item"><i dataIndex="2"></i></div>
+		<div class="nav-item"><i dataIndex="3"></i></div>
+		<div class="nav-item"><i dataIndex="4"></i></div>
+	</div>
+	<script src="main.js"></script>
+</body>
+
+</html>
